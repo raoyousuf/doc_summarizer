@@ -122,7 +122,7 @@ def main():
             vectorstore, index_name = insert_or_fetch_index(chunks, document_file.name)
             text = " ".join([page.page_content for page in data])
 
-            if 'summary' in query.lower():
+            if 'summary' or 'summarize' in query.lower():
                 output_summary = summarize_text(text)
                 st.write(output_summary)
             else:
